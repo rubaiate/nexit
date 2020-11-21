@@ -1,7 +1,7 @@
 import React from "react";
 import { Svg, Rect, SvgUri } from "react-native-svg";
 
-import { Gate } from "./Gate";
+import Gate from "./Gate";
 import Lift from "./Lift";
 import Escalator from "./Escalator";
 import Staircase from "./Staircase";

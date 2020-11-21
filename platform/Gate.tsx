@@ -7,7 +7,7 @@ interface Props {
   height: number;
 }
 
-export const Gate = (props: Props) => {
+const Gate = (props: Props) => {
   const { x, y, height, width } = props;
   return (
     <Rect
@@ -21,3 +21,5 @@ export const Gate = (props: Props) => {
     />
   );
 };
+
+export default Gate;

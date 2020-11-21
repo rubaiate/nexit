@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RNSVGRect
+  fill={4279713631}
+  height={60}
+  propList={
+    Array [
+      "fill",
+      "stroke",
+      "strokeWidth",
+    ]
+  }
+  stroke={4278190080}
+  strokeWidth="1"
+  width={1000}
+  x={10}
+  y={-20}
+/>
+`;
