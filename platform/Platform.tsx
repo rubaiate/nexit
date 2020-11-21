@@ -1,18 +1,18 @@
 import React from "react";
 import { Svg, Rect } from "react-native-svg";
 
+import { Station } from "../models/ModelTypes";
 import Gate from "./Gate";
-import Lift from "./access-points/Lift";
-import Escalator from "./access-points/Escalator";
-import Staircase from "./access-points/Staircase";
+import AccessPoint from "./access-points/AccessPoint";
 
 interface Props {
   x: number;
   y: number;
+  station: Station;
 }
 
 const Platform = (props: Props) => {
-  const { x, y } = props;
+  const { x, y, station } = props;
   const height = 450;
   const platformLength = 900;
 
@@ -47,9 +47,9 @@ const Platform = (props: Props) => {
       />
       {gates(y)}
       {gates(y + height)}
-      <Lift x={300} y={250} width={100} height={100} accessDirection={1} />
-      <Escalator x={600} y={250} width={100} height={100} accessDirection={1} />
-      <Staircase x={600} y={100} width={100} height={100} accessDirection={1} />
+      {station.accessPoints.map((ap, index) => (
+        <AccessPoint key={index} {...ap} x={300} width={100} height={100} />
+      ))}
     </Svg>
   );
 };
