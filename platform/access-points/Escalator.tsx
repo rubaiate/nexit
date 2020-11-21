@@ -1,14 +1,9 @@
 import React from "react";
 import Svg, { Path, G } from "react-native-svg";
-import RoundedRecatSvg from "../components/RoundedRectSvg";
-interface Props {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
+import RoundedRecatSvg from "../../components/RoundedRectSvg";
+import { AccessPointProps } from "./AccessPointTypes";
 
-function SvgComponent(props: Props) {
+function SvgComponent(props: AccessPointProps) {
   const { x, y, width, height } = props;
   return (
     <G x={x} y={y}>

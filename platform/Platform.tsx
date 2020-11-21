@@ -1,10 +1,10 @@
 import React from "react";
-import { Svg, Rect, SvgUri } from "react-native-svg";
+import { Svg, Rect } from "react-native-svg";
 
 import Gate from "./Gate";
-import Lift from "./Lift";
-import Escalator from "./Escalator";
-import Staircase from "./Staircase";
+import Lift from "./access-points/Lift";
+import Escalator from "./access-points/Escalator";
+import Staircase from "./access-points/Staircase";
 
 interface Props {
   x: number;
@@ -47,9 +47,9 @@ const Platform = (props: Props) => {
       />
       {gates(y)}
       {gates(y + height)}
-      <Lift x={300} y={250} width={100} height={100} />
-      <Escalator x={600} y={250} width={100} height={100} />
-      <Staircase x={600} y={100} width={100} height={100} />
+      <Lift x={300} y={250} width={100} height={100} accessDirection={1} />
+      <Escalator x={600} y={250} width={100} height={100} accessDirection={1} />
+      <Staircase x={600} y={100} width={100} height={100} accessDirection={1} />
     </Svg>
   );
 };
