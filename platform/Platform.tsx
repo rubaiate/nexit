@@ -16,17 +16,23 @@ const Platform = (props: Props) => {
   const height = 450;
   const platformLength = 900;
 
-  const gateCount = 12;
-  const gateWidth = 65;
-  const gap = (platformLength - gateWidth * gateCount) / gateCount;
-  const init = x + gap / 2;
+  const gateCount = 24;
+  const displayGridSize = 6;
+  const gateWidth = 100;
+  const gap = (platformLength - gateWidth * displayGridSize) / displayGridSize;
+  const initX = x + gap / 2;
 
+  console.log("Gap " + gap);
   const gatePos = (
     gateIndex: number,
     xOffset: number,
     gateAlignment: Alignment
   ) => {
-    const basePos = init + (gateWidth + gap) * gateIndex + xOffset;
+    const displayIndex = Math.floor((gateIndex * displayGridSize) / gateCount);
+
+    const basePos = initX + (gateWidth + gap) * displayIndex + xOffset;
+
+    console.log(basePos);
     switch (gateAlignment) {
       case Alignment.Start:
         return basePos;
@@ -37,22 +43,19 @@ const Platform = (props: Props) => {
     }
   };
 
-  const gates = (gateY: number) => {
-    const gateData = [];
-    for (let idx = 0; idx < gateCount; idx++) {
-      gateData.push(
-        <Gate
-          key={idx}
-          x={gatePos(idx, 0, 0)}
-          y={gateY}
-          width={gateWidth}
-          height={60}
-        />
-      );
-    }
-    return gateData;
+  const gates = (gateY: number, visibleGates: number[]) => {
+    return visibleGates.map((gateIdx) => (
+      <Gate
+        key={gateIdx}
+        x={gatePos(gateIdx, 0, 0)}
+        y={gateY}
+        width={gateWidth}
+        height={60}
+      />
+    ));
   };
 
+  const basePoints = station.accessPoints.map((ap) => ap.baseGate);
   return (
     <Svg height="53%" width="100%" viewBox="0 0 1000 500">
       <Rect
@@ -64,8 +67,8 @@ const Platform = (props: Props) => {
         strokeWidth="2"
         fill="#3CAEA3"
       />
-      {gates(y)}
-      {gates(y + height)}
+      {gates(y, [0, 23, ...basePoints])}
+      {gates(y + height, [0, 23])}
       {station.accessPoints.map((ap, index) => (
         <AccessPoint
           key={index}

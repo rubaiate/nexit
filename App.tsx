@@ -2,7 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import { TrainLine, Station, AccessPoint } from "./models/ModelTypes";
+import {
+  TrainLine,
+  Station,
+  AccessPoint,
+  Alignment,
+} from "./models/ModelTypes";
 import Platform from "./platform/Platform";
 
 export default function App() {
@@ -15,9 +20,9 @@ export default function App() {
 
   const lift: AccessPoint = {
     type: "lift",
-    baseGate: 3,
-    baseGateAlign: 2,
-    apAlign: 2,
+    baseGate: 5,
+    baseGateAlign: Alignment.Start,
+    apAlign: Alignment.End,
     xOffset: 0,
     y: 100,
     accessDirection: 0,
