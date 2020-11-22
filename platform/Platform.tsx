@@ -22,7 +22,6 @@ const Platform = (props: Props) => {
   const gap = (platformLength - gateWidth * displayGridSize) / displayGridSize;
   const initX = x + gap / 2;
 
-  console.log("Gap " + gap);
   const gatePos = (
     gateIndex: number,
     xOffset: number,
@@ -32,7 +31,6 @@ const Platform = (props: Props) => {
 
     const basePos = initX + (gateWidth + gap) * displayIndex + xOffset;
 
-    console.log(basePos);
     switch (gateAlignment) {
       case Alignment.Start:
         return basePos;
