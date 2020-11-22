@@ -16,9 +16,10 @@ export default function App() {
   const lift: AccessPoint = {
     type: "lift",
     baseGate: 3,
-    baseGateAlignment: 0,
+    baseGateAlign: 2,
+    apAlign: 2,
     xOffset: 0,
-    y: 250,
+    y: 100,
     accessDirection: 0,
   };
 

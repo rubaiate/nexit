@@ -7,7 +7,7 @@ import { AccessPointProps } from "./AccessPointTypes";
 function SvgComponent(props: AccessPointProps) {
   const { x, y, width, height } = props;
   return (
-    <G x={x} y={y}>
+    <React.Fragment>
       <RoundedRecatSvg {...props} r={10} stroke="black" fill="white" />
       <Svg
         viewBox="0 0 297.98 487.59"
@@ -41,7 +41,7 @@ function SvgComponent(props: AccessPointProps) {
           </G>
         </G>
       </Svg>
-    </G>
+    </React.Fragment>
   );
 }
 

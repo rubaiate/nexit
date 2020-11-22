@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`align by end 1`] = `
+<RNSVGGroup
+  matrix={
+    Array [
+      1,
+      0,
+      -0,
+      1,
+      200,
+      250,
+    ]
+  }
+>
+  <RNSVGPath
+    d="M6,-4 h88 a10,10 0 0 1 10,10 v88 a10,10 0 0 1 -10,10 h-88 a10,10 0 0 1 -10,-10 v-88 a10,10 0 0 1 10,-10"
+    fill={4294967295}
+    propList={
+      Array [
+        "fill",
+        "stroke",
+      ]
+    }
+    stroke={4278190080}
+  />
+  <RNSVGSvgView
+    align="xMidYMid"
+    bbHeight={100}
+    bbWidth={100}
+    fill="black"
+    focusable={false}
+    height={100}
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    stroke="black"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        Object {
+          "flex": 0,
+          "height": 100,
+          "width": 100,
+        },
+      ]
+    }
+    vbHeight={512.004}
+    vbWidth={512.004}
+    width={100}
+  >
+    <RNSVGGroup
+      fill={4278190080}
+      propList={
+        Array [
+          "fill",
+          "stroke",
+        ]
+      }
+      stroke={4278190080}
+    >
+      <RNSVGPath
+        d="M364.957 107.108v34.861h15.057v62.005H268.09v34.861h15.058v62.006H171.223v34.862h15.059v62.005H74.356v34.861h15.059v79.435h34.861v-79.435h96.867v-96.866h96.866v-96.868h96.867v-96.866h79.436v-34.861zM17.69 321.282L338.97.002l24.651 24.65-321.28 321.28z"
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</RNSVGGroup>
+`;
+
+exports[`align by mid 1`] = `
+<RNSVGGroup
+  matrix={
+    Array [
+      1,
+      0,
+      -0,
+      1,
+      250,
+      250,
+    ]
+  }
+>
+  <RNSVGPath
+    d="M6,-4 h88 a10,10 0 0 1 10,10 v88 a10,10 0 0 1 -10,10 h-88 a10,10 0 0 1 -10,-10 v-88 a10,10 0 0 1 10,-10"
+    fill={4294967295}
+    propList={
+      Array [
+        "fill",
+        "stroke",
+      ]
+    }
+    stroke={4278190080}
+  />
+  <RNSVGSvgView
+    align="xMidYMid"
+    bbHeight={100}
+    bbWidth={100}
+    fill="black"
+    focusable={false}
+    height={100}
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    stroke="black"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        Object {
+          "flex": 0,
+          "height": 100,
+          "width": 100,
+        },
+      ]
+    }
+    vbHeight={512.004}
+    vbWidth={512.004}
+    width={100}
+  >
+    <RNSVGGroup
+      fill={4278190080}
+      propList={
+        Array [
+          "fill",
+          "stroke",
+        ]
+      }
+      stroke={4278190080}
+    >
+      <RNSVGPath
+        d="M364.957 107.108v34.861h15.057v62.005H268.09v34.861h15.058v62.006H171.223v34.862h15.059v62.005H74.356v34.861h15.059v79.435h34.861v-79.435h96.867v-96.866h96.866v-96.868h96.867v-96.866h79.436v-34.861zM17.69 321.282L338.97.002l24.651 24.65-321.28 321.28z"
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</RNSVGGroup>
+`;
+
+exports[`align by start 1`] = `
+<RNSVGGroup
+  matrix={
+    Array [
+      1,
+      0,
+      -0,
+      1,
+      300,
+      250,
+    ]
+  }
+>
+  <RNSVGPath
+    d="M6,-4 h88 a10,10 0 0 1 10,10 v88 a10,10 0 0 1 -10,10 h-88 a10,10 0 0 1 -10,-10 v-88 a10,10 0 0 1 10,-10"
+    fill={4294967295}
+    propList={
+      Array [
+        "fill",
+        "stroke",
+      ]
+    }
+    stroke={4278190080}
+  />
+  <RNSVGSvgView
+    align="xMidYMid"
+    bbHeight={100}
+    bbWidth={100}
+    fill="black"
+    focusable={false}
+    height={100}
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    stroke="black"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        Object {
+          "flex": 0,
+          "height": 100,
+          "width": 100,
+        },
+      ]
+    }
+    vbHeight={512.004}
+    vbWidth={512.004}
+    width={100}
+  >
+    <RNSVGGroup
+      fill={4278190080}
+      propList={
+        Array [
+          "fill",
+          "stroke",
+        ]
+      }
+      stroke={4278190080}
+    >
+      <RNSVGPath
+        d="M364.957 107.108v34.861h15.057v62.005H268.09v34.861h15.058v62.006H171.223v34.862h15.059v62.005H74.356v34.861h15.059v79.435h34.861v-79.435h96.867v-96.866h96.866v-96.868h96.867v-96.866h79.436v-34.861zM17.69 321.282L338.97.002l24.651 24.65-321.28 321.28z"
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</RNSVGGroup>
+`;

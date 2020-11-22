@@ -1,7 +1,7 @@
 import React from "react";
 import { Svg, Rect } from "react-native-svg";
 
-import { Station } from "../models/ModelTypes";
+import { Station, Alignment } from "../models/ModelTypes";
 import Gate from "./Gate";
 import AccessPoint from "./access-points/AccessPoint";
 
@@ -16,20 +16,39 @@ const Platform = (props: Props) => {
   const height = 450;
   const platformLength = 900;
 
+  const gateCount = 12;
+  const gateWidth = 65;
+  const gap = (platformLength - gateWidth * gateCount) / gateCount;
+  const init = x + gap / 2;
+
+  const gatePos = (
+    gateIndex: number,
+    xOffset: number,
+    gateAlignment: Alignment
+  ) => {
+    const basePos = init + (gateWidth + gap) * gateIndex + xOffset;
+    switch (gateAlignment) {
+      case Alignment.Start:
+        return basePos;
+      case Alignment.End:
+        return basePos + gateWidth;
+      default:
+        return basePos + gateWidth / 2;
+    }
+  };
+
   const gates = (gateY: number) => {
-    const gateWidth = 65;
-
-    const gateCount = 12;
-    const gap = (platformLength - gateWidth * gateCount) / gateCount;
-    const startGap = gap / 2;
-    let gatePos = x + startGap;
-
     const gateData = [];
     for (let idx = 0; idx < gateCount; idx++) {
       gateData.push(
-        <Gate key={idx} x={gatePos} y={gateY} width={gateWidth} height={60} />
+        <Gate
+          key={idx}
+          x={gatePos(idx, 0, 0)}
+          y={gateY}
+          width={gateWidth}
+          height={60}
+        />
       );
-      gatePos += gateWidth + gap;
     }
     return gateData;
   };
@@ -48,7 +67,13 @@ const Platform = (props: Props) => {
       {gates(y)}
       {gates(y + height)}
       {station.accessPoints.map((ap, index) => (
-        <AccessPoint key={index} {...ap} x={300} width={100} height={100} />
+        <AccessPoint
+          key={index}
+          {...ap}
+          x={gatePos(ap.baseGate, ap.xOffset, ap.baseGateAlign)}
+          width={100}
+          height={100}
+        />
       ))}
     </Svg>
   );

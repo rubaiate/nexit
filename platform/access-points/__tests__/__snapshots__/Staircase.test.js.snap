@@ -1,18 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render correctly 1`] = `
-<RNSVGGroup
-  matrix={
-    Array [
-      1,
-      0,
-      -0,
-      1,
-      600,
-      100,
-    ]
-  }
->
+Array [
   <RNSVGPath
     d="M6,-4 h88 a10,10 0 0 1 10,10 v88 a10,10 0 0 1 -10,10 h-88 a10,10 0 0 1 -10,-10 v-88 a10,10 0 0 1 10,-10"
     fill={4294967295}
@@ -23,7 +12,7 @@ exports[`render correctly 1`] = `
       ]
     }
     stroke={4278190080}
-  />
+  />,
   <RNSVGSvgView
     align="xMidYMid"
     bbHeight={100}
@@ -66,6 +55,6 @@ exports[`render correctly 1`] = `
         d="M364.957 107.108v34.861h15.057v62.005H268.09v34.861h15.058v62.006H171.223v34.862h15.059v62.005H74.356v34.861h15.059v79.435h34.861v-79.435h96.867v-96.866h96.866v-96.868h96.867v-96.866h79.436v-34.861zM17.69 321.282L338.97.002l24.651 24.65-321.28 321.28z"
       />
     </RNSVGGroup>
-  </RNSVGSvgView>
-</RNSVGGroup>
+  </RNSVGSvgView>,
+]
 `;

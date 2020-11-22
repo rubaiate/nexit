@@ -1,18 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<RNSVGGroup
-  matrix={
-    Array [
-      1,
-      0,
-      -0,
-      1,
-      600,
-      250,
-    ]
-  }
->
+Array [
   <RNSVGPath
     d="M6,-4 h88 a10,10 0 0 1 10,10 v88 a10,10 0 0 1 -10,10 h-88 a10,10 0 0 1 -10,-10 v-88 a10,10 0 0 1 10,-10"
     fill={4294967295}
@@ -23,7 +12,7 @@ exports[`renders correctly 1`] = `
       ]
     }
     stroke={4278190080}
-  />
+  />,
   <RNSVGSvgView
     align="xMidYMid"
     bbHeight={100}
@@ -83,6 +72,6 @@ exports[`renders correctly 1`] = `
         }
       />
     </RNSVGGroup>
-  </RNSVGSvgView>
-</RNSVGGroup>
+  </RNSVGSvgView>,
+]
 `;

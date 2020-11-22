@@ -1,3 +1,9 @@
+export enum Alignment {
+    Start,
+    End,
+    Mid
+}
+
 export interface TrainLine {
     name:string,
     prefix:string,
@@ -8,7 +14,8 @@ export interface TrainLine {
 export interface AccessPoint {
     type:string,
     baseGate:number,
-    baseGateAlignment:number,
+    baseGateAlign:Alignment,
+    apAlign:Alignment,
     xOffset:number,
     y:number,
     accessDirection:number,
