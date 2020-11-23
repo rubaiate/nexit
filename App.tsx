@@ -1,14 +1,28 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { Picker } from "@react-native-picker/picker";
 
 import { Station, AccessPoint, Alignment } from "./models/ModelTypes";
-import TrainLine from "./service/TrainLine";
+
 import Platform from "./platform/Platform";
-import { Picker } from "@react-native-picker/picker";
+import DBLoadService from "./service/DBLoadService";
+import TrainLine from "./service/TrainLine";
 import TrainSystem from "./service/TrainSystem";
 
 export default function App() {
+  const [dbLoaded, setDbLoaded] = useState(false);
+
+  const initDb = async () => {
+    const dbLoadService = new DBLoadService();
+    await dbLoadService.initDb();
+    setDbLoaded(true);
+  };
+
+  useEffect(() => {
+    initDb();
+  }, []);
+
   const lift: AccessPoint = {
     type: "lift",
     baseGate: 5,
@@ -45,30 +59,32 @@ export default function App() {
   trainSystem.addTrainLine(trainLine);
 
   return (
-    <View style={styles.container}>
-      <Picker style={{ width: 200 }}>
-        {trainSystem.trainLines.map((line) => (
-          <Picker.Item
-            key={line.prefix}
-            value={line.prefix}
-            label={line.name}
-          />
-        ))}
-      </Picker>
-      <Picker style={{ width: 200 }}>
-        {trainLine.getStationList().map((station) => (
-          <Picker.Item
-            key={station.code}
-            value={station.code}
-            label={station.name}
-          />
-        ))}
-      </Picker>
-      <View style={{ backgroundColor: "white", width: "100%" }}>
-        <Platform x={70} y={20} station={kembangan} />
+    dbLoaded && (
+      <View style={styles.container}>
+        <Picker style={{ width: 200 }}>
+          {trainSystem.trainLines.map((line) => (
+            <Picker.Item
+              key={line.prefix}
+              value={line.prefix}
+              label={line.name}
+            />
+          ))}
+        </Picker>
+        <Picker style={{ width: 200 }}>
+          {trainLine.getStationList().map((station) => (
+            <Picker.Item
+              key={station.code}
+              value={station.code}
+              label={station.name}
+            />
+          ))}
+        </Picker>
+        <View style={{ backgroundColor: "white", width: "100%" }}>
+          <Platform x={70} y={20} station={kembangan} />
+        </View>
+        <StatusBar style="auto" />
       </View>
-      <StatusBar style="auto" />
-    </View>
+    )
   );
 }
 
